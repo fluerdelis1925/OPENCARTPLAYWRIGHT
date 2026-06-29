@@ -23,6 +23,6 @@ test('user can login, add a product to the cart', async({page}) =>
   //Cart Page
    const cartPage = new CartPage(page);
    await cartPage.checkProductInCart("Samsung galaxy s6")
-  await page.waitForTimeout(3000);
+   await page.waitForTimeout(3000);
 
 })
