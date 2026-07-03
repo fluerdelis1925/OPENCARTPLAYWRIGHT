@@ -18,8 +18,8 @@ export class RegistrationPage {
         this.page = page;
         
         // Initialize locators with CSS selectors
-        this.txtFirstname = page.locator('#input-firstname');
-        this.txtLastname = page.locator('#input-lastname');
+        this.txtFirstname = page.locator('input[name="firstname"]');
+        this.txtLastname = page.locator('input[name="lastname"]');
         this.txtEmail = page.locator('#input-email');
         this.txtTelephone = page.locator('#input-telephone');
         this.txtPassword = page.locator('#input-password');
@@ -34,7 +34,10 @@ export class RegistrationPage {
      * @param fname - First name to enter
      */
     async setFirstName(fname: string): Promise<void> {
+        await this.txtFirstname.waitFor({ state: 'visible' });
+        await this.page.waitForTimeout(500); // Optional: Wait for 500ms to ensure the field is ready
         await this.txtFirstname.fill(fname);
+        await expect(this.txtFirstname).toHaveValue(fname); // Validate that the first name is set correctly
     }
 
     /**
@@ -42,7 +45,9 @@ export class RegistrationPage {
      * @param lname - Last name to enter
      */
     async setLastName(lname: string): Promise<void> {
-        await this.txtLastname.fill(lname);
+         this.txtLastname.waitFor({ state: 'visible' });
+         this.txtLastname.fill(lname);
+         expect(this.txtLastname).toHaveValue(lname); // Validate that the last name is set correctly
     }
 
     /**
@@ -50,6 +55,7 @@ export class RegistrationPage {
      * @param email - Email to enter
      */
     async setEmail(email: string): Promise<void> {
+        await this.txtEmail.waitFor({ state: 'visible' });
         await this.txtEmail.fill(email);
     }
 
@@ -58,6 +64,7 @@ export class RegistrationPage {
      * @param tel - Telephone number to enter
      */
     async setTelephone(tel: string): Promise<void> {
+        await this.txtTelephone.waitFor({ state: 'visible' });
         await this.txtTelephone.fill(tel);
     }
 
@@ -66,6 +73,7 @@ export class RegistrationPage {
      * @param pwd - Password to enter
      */
     async setPassword(pwd: string): Promise<void> {
+        await this.txtPassword.waitFor({ state: 'visible' });
         await this.txtPassword.fill(pwd);
     }
 
@@ -74,6 +82,7 @@ export class RegistrationPage {
      * @param pwd - Password to confirm
      */
     async setConfirmPassword(pwd: string): Promise<void> {
+        await this.txtConfirmPassword.waitFor({ state: 'visible' });
         await this.txtConfirmPassword.fill(pwd);
     }
 
@@ -81,6 +90,7 @@ export class RegistrationPage {
      * Checks the privacy policy checkbox
      */
     async setPrivacyPolicy(): Promise<void> {
+        await this.chkdPolicy.waitFor({ state: 'visible' });
         await this.chkdPolicy.check();
     }
 
@@ -88,6 +98,7 @@ export class RegistrationPage {
      * Clicks the Continue button
      */
     async clickContinue(): Promise<void> {
+        await this.btnContinue.waitFor({ state: 'visible' });
         await this.btnContinue.click();
     }
 
@@ -96,6 +107,7 @@ export class RegistrationPage {
      * @returns Promise<string> - Confirmation message text
      */
     async getConfirmationMsg(): Promise<string> {
+        await this.msgConfirmation.waitFor({ state: 'visible' });
         return await this.msgConfirmation.textContent() ?? '';
     }
 
