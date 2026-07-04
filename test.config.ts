@@ -1,10 +1,10 @@
 export class TestConfig
 {
-//appUrl="http://localhost/opencart/upload/"
-appUrl="https://tutorialsninja.com/demo/"
+appUrl="http://localhost/opencart/upload/"
+//appUrl="https://tutorialsninja.com/demo/"
 //valid login credentials- create your own login account
-email="pavanol@abc.com"
-password="test@123"
+email="ronatolentino@gmail.com"
+password="test1234"
 //product details
 productName="MacBook"
 productQuantity="2"

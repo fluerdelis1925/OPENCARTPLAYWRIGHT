@@ -1,14 +1,21 @@
-import{test, expect} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
 import { MyAccountPage } from '../pages/MyAccountPage';
 import { TestConfig } from '../test.config';
 import { DataProvider } from '../utils/DataProvider';
 
+interface LoginTestData {
+   testName: string;
+   email: string;
+   password: string;
+   expected: string;
+}
+
 //Load Json test data logindata.json
 
 const jsonPath = "testdata/logindata.json";
-const jsonTestData =DataProvider.getDataFromJson(jsonPath);
+const jsonTestData = DataProvider.getDataFromJson(jsonPath) as LoginTestData[];
 
 for(const data of jsonTestData)
 {
@@ -43,7 +50,7 @@ for(const data of jsonTestData)
 
 
 const cPath = "testdata/logindata.csv";
-const csvTestData = DataProvider.getDataFromCsv(cPath);
+const csvTestData = DataProvider.getDataFromCsv(cPath) as LoginTestData[];
 
 for(const data of csvTestData)
 {
