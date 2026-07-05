@@ -1,0 +1,51 @@
+Error occurred while clicking on My Account link: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('span:has-text("My Account")')
+
+    at HomePage.clickOnMyAccount (C:\Users\insul\Documents\PW\pages\HomePage.ts:42:31)
+    at C:\Users\insul\Documents\PW\tests\login.spec.ts:43:20 {
+  log: [ `  - waiting for locator('span:has-text("My Account")')` ],
+  Symbol(step): {
+    location: {
+      file: 'C:\\Users\\insul\\Documents\\PW\\pages\\HomePage.ts',
+      line: 42,
+      column: 31,
+      function: 'HomePage.clickOnMyAccount'
+    },
+    category: 'pw:api',
+    title: `Click locator('span:has-text("My Account")')`,
+    apiName: 'locator.click',
+    params: {
+      selector: 'span:has-text("My Account")',
+      strict: true,
+      timeout: 0
+    },
+    group: undefined,
+    stepId: 'pw:api@36',
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@36',
+      _title: `Click locator('span:has-text("My Account")')`,
+      _parentStep: undefined,
+      skip: [Function (anonymous)]
+    },
+    complete: [Function: complete],
+    endWallTime: 1783241994674,
+    error: {
+      message: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('span:has-text("My Account")')\x1B[22m\n`,
+      stack: 'Error: locator.click: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('span:has-text("My Account")')\x1B[22m\n` +
+        '\n' +
+        '    at HomePage.clickOnMyAccount (C:\\Users\\insul\\Documents\\PW\\pages\\HomePage.ts:42:31)\n' +
+        '    at C:\\Users\\insul\\Documents\\PW\\tests\\login.spec.ts:43:20',
+      cause: undefined
+    }
+  }
+}

@@ -1,0 +1,52 @@
+Error occurred while entering product name: locator.fill: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('input[placeholder="Search"]')
+
+    at HomePage.enterProductName (C:\Users\insul\Documents\PW\pages\HomePage.ts:84:31)
+    at C:\Users\insul\Documents\PW\tests\AddToCart.spec.ts:45:18 {
+  log: [ `  - waiting for locator('input[placeholder="Search"]')` ],
+  Symbol(step): {
+    location: {
+      file: 'C:\\Users\\insul\\Documents\\PW\\pages\\HomePage.ts',
+      line: 84,
+      column: 31,
+      function: 'HomePage.enterProductName'
+    },
+    category: 'pw:api',
+    title: `Fill "MacBook" locator('input[placeholder="Search"]')`,
+    apiName: 'locator.fill',
+    params: {
+      selector: 'input[placeholder="Search"]',
+      value: 'MacBook',
+      strict: true,
+      timeout: 0
+    },
+    group: undefined,
+    stepId: 'pw:api@36',
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@36',
+      _title: `Fill "MacBook" locator('input[placeholder="Search"]')`,
+      _parentStep: undefined,
+      skip: [Function (anonymous)]
+    },
+    complete: [Function: complete],
+    endWallTime: 1783242030137,
+    error: {
+      message: 'Error: locator.fill: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('input[placeholder="Search"]')\x1B[22m\n`,
+      stack: 'Error: locator.fill: Target page, context or browser has been closed\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('input[placeholder="Search"]')\x1B[22m\n` +
+        '\n' +
+        '    at HomePage.enterProductName (C:\\Users\\insul\\Documents\\PW\\pages\\HomePage.ts:84:31)\n' +
+        '    at C:\\Users\\insul\\Documents\\PW\\tests\\AddToCart.spec.ts:45:18',
+      cause: undefined
+    }
+  }
+}
